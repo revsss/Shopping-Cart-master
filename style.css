@@ -1,95 +1,55 @@
-:root {
-  --main-bg-color: #ff4000;
-  --main-text-color: #009d63;
-  --second-text-color: #bbbec5;
-  --second-bg-color: #c1efde;
+
+/* -------------  CSS Loader  ----------- */
+
+.overlay{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 10;
+	opacity: 0.7;
+}
+.loader{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border:10px solid #333;
+	position: relative;
+	margin: 0 auto;
+	top:30%;
+	animation:loader 2s linear infinite;
+}
+@keyframes loader{
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		transform:rotate(360deg);
+	}
+}
+.loader:after{
+	content: "";
+    width: 35px;
+    height: 35px;
+    background: #333;
+    position: absolute;
+    border-radius: 50%;
+    top: -20px;
+    left: 55px;
+}
+.loader:before{
+	content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #333;
+    position: absolute;
+    transform: rotate(-90deg);
+    top: -10px;
+    left: 39px;
+
 }
 
-.primary-text {
-  color: var(--main-text-color);
-}
-
-.second-text {
-  color: var(--second-text-color);
-}
-
-.primary-bg {
-  background-color: var(--main-bg-color);
-}
-
-.secondary-bg {
-  background-color: var(--second-bg-color);
-}
-
-.rounded-full {
-  border-radius: 100%;
-}
-
-#wrapper {
-  overflow-x: hidden;
-  background-image: linear-gradient(
-    to right,
-    #baf3d7,
-    #c2f5de,
-    #cbf7e4,
-    #d4f8ea,
-    #ddfaef
-  );
-}
-
-#sidebar-wrapper {
-  min-height: 100vh;
-  margin-left: -15rem;
-  -webkit-transition: margin 0.25s ease-out;
-  -moz-transition: margin 0.25s ease-out;
-  -o-transition: margin 0.25s ease-out;
-  transition: margin 0.25s ease-out;
-}
-
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
-}
-
-#sidebar-wrapper .list-group {
-  width: 15rem;
-}
-
-#page-content-wrapper {
-  min-width: 100vw;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-}
-
-#menu-toggle {
-  cursor: pointer;
-}
-
-.list-group-item {
-  border: none;
-  padding: 20px 30px;
-}
-
-.list-group-item.active {
-  background-color: transparent;
-  color: var(--main-text-color);
-  font-weight: bold;
-  border: none;
-}
-
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
-}
+/* --------- CSS Loader End Here ------------*/
